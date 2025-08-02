@@ -115,23 +115,6 @@ animation-delay: calc(-4s * var(--i));
   gap: 15px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 30px;
-  background: lightgreen;
-  border: 2px solid lightgreen;
-  border-radius: 40px;
-  font-size: 16px;
-  color: #1f242d;
-  font-weight: 600;
-  transition: .5s;
-}
-
-.btn:hover {
-  background: transparent;
-  color: lightgreen;
-}
-
 .home-info .btn-sci .sci {
 margin-left: 20px;
 }
@@ -209,3 +192,64 @@ object-fit: cover;
 mix-blend-mode: lighten;
 }
 
+
+.about{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 60px 9% 0;
+  color:white;
+  background-color: rgb(2, 2, 41) rgb(1, 1, 19);
+  border-radius: 16px;
+}
+
+.about h2 {
+  font-size: 32px;
+  display: inline-block;
+  margin-top: -10px;
+  color:lightgreen;
+}
+
+.about h3{
+  font-size: 30px;
+  color: lightgreen;
+  display: inline-block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.about p{
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: lightgreen;
+  border: 2px solid lightgreen;
+  border-radius: 40px;
+  font-size: 11px;
+  color: #1f242d;
+  font-weight: 600;
+  transition: .5s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: lightgreen;
+}
+
+.about ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+
+.about ul li::before {
+  content: "✔ ";
+  color: #27ae60;
+  left: 0;
+}
