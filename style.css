@@ -10,6 +10,10 @@ body{
   background: #1f242d;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
 color: #FFFFFF;
 text-decoration: none;
@@ -29,8 +33,8 @@ z-index: 100;
 }
 
 .navbar .logo {
-font-size: 30px;
-font-weight: 700;
+font-size: 20px;
+font-weight: 500;
 }
 
 .navbar ul{
@@ -41,10 +45,11 @@ font-weight: 700;
   list-style: none;
   margin-left: 35px;
 }
-.navbar ul li a{
+.navbar ul li a.active{
   font-size: 20px;
   font-weight: 500;
   transition: .5s;
+  color: lightgreen;
 }
 
 .navbar ul li:hover a,
@@ -56,22 +61,47 @@ font-weight: 700;
 .home{
   display: flex;
   align-items: center;
-  height: 100vh;
+  min-height: 90vh;
+  justify-content: space-between;
   padding: 60px 9% 0;
   color:white;
-}
-
-.home-info h1 {
-  font-size: 55px;
+  gap:2rem;
 }
 
 .home-info h2 {
+  font-size: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.home-info h3 {
   display: inline-block;
   font-size: 32px;
   margin-top: -10px;
 }
 
-.home-info h2 span{
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .home-img .img-box {
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px; /* adds white space between image and text */
+  padding: 40px 20px;
+  text-align: center;
+}
+.home-info h3 span{
   position: relative;
   display: inline-block;
   color: transparent;
@@ -87,7 +117,7 @@ animation-delay: calc(-4s * var(--i));
   }
 }
 
-.home-info h2 span::before{
+.home-info h3 span::before{
   content: attr(data-text);
   position: absolute;
   width: 0%;
@@ -108,8 +138,9 @@ animation-delay: calc(-4s * var(--i));
 }
 
 .home-info p{
-  font-size: 16px;
+  font-size: 20px;
   margin: 10px 0 25px;
+  text-align: center;
 }
 
 .home-info .btn-sci{
@@ -141,8 +172,8 @@ margin-left: 20px;
 
 .home-img .img-box{
 position: relative;
-width:32vw ;
-height: 32vw;
+width:20vw;
+height: 20vw;
 border-radius: 50%;
 padding: 5px;
 display: flex;
@@ -240,6 +271,11 @@ mix-blend-mode: lighten;
   transition: .5s;
 }
 
+.btn-sci {
+  margin-top: 30px; /* adds space between education and CTA */
+  text-align: left;
+}
+
 .btn:hover {
   background: transparent;
   color: lightgreen;
@@ -330,7 +366,9 @@ mix-blend-mode: lighten;
 .contact h2 {
   font-size: 32px;
   margin-bottom: 10px;
-  color: var(--accent);
+  margin-left: 100px;
+  color: lightgreen;
+  text-align: left;
 }
 
 .contact p {
@@ -345,7 +383,7 @@ mix-blend-mode: lighten;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
+  margin-bottom: 40px;
 }
 
 .contact-form input,
@@ -389,7 +427,7 @@ mix-blend-mode: lighten;
   white-space: nowrap;
   box-sizing: border-box;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #1f242d;
   padding: 10px;
 }
 
@@ -409,17 +447,20 @@ mix-blend-mode: lighten;
   }
 }
 
+/*projects page*/
 .projects-section {
   padding: 40px 20px;
   background-color: #1f242d;
   text-align: center;
 }
 
-.projects-section h4 {
+.projects-section h2 {
   font-size: 32px;
   color: lightgreen;
-  text-align: center;
-  margin-bottom: 40px;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 2%;
+  margin-left: 11%;
   position: relative;
 }
 
@@ -450,6 +491,11 @@ mix-blend-mode: lighten;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-card p {
+  color: white;   font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -472,3 +518,21 @@ mix-blend-mode: lighten;
   text-decoration: underline;
 }
 
+.connect-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #90ee8f;
+  color: #1f1f1f;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: left;
+}
+
+.connect-btn:hover {
+  background-color: #6fd86d;
+  transform: scale(1.05);
+}
